@@ -1,17 +1,27 @@
 server:
   port: 8081
 
+app:
+  ai:
+    provider: vertexai # or openai
+
 spring:
   application:
     name: gen-ai-java-spring
-
   ai:
     openai:
       api-key: ${OPENAI_API_KEY}
-
       chat:
         options:
           model: gpt-4o
+    vertex:
+      ai:
+        gemini:
+          project-id: spring-ai-gemini-497207
+          location: us-central1
+          chat:
+            options:
+              model: gemini-1.5-flash
 
 logging:
   level:

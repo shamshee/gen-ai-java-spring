@@ -5,6 +5,7 @@ import com.genai.java.springai.chat.openai.service.OpenAIService;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.ChatClientResponse;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/openai/chat")
+@ConditionalOnProperty(prefix = "app.ai", name="provider", havingValue = "openai")
 public class OpenAIChatController {
 
 
