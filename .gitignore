@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+
+# Google credentials
+*.json
