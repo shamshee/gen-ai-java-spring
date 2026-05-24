@@ -3,7 +3,7 @@ server:
 
 app:
   ai:
-    provider: vertexai # or openai
+    provider: ollmaai # or openai
 
 spring:
   application:
@@ -22,7 +22,13 @@ spring:
           chat:
             options:
               model: gemini-1.5-flash
-
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model:  tinyllama:latest # custom-mistral-model:latest
+          max-new-tokens: 512
+          temperature: 0.7
 logging:
   level:
     root: INFO
